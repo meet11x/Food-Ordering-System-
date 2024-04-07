@@ -1,0 +1,70 @@
+{% extends "base.html" %} {% block content %}
+
+<br /><br />
+<br /><br />
+<div
+  class="container-fluid"
+  style="display: grid; place-items: center; margin-top: 50px"
+>
+  {% if status %}
+  <div
+    style="
+      border: 2px solid black;
+      padding: 20px;
+      text-align: center;
+      background-color: rgb(228, 229, 229);
+    "
+  >
+    <p>
+      We are thrilled to inform you that your order has been successfully
+      placed. Our team is already hard at work to ensure that your items are
+      carefully prepared and promptly delivered to you
+    </p>
+    <br /><br />
+    <div
+      class="container"
+      style="background-color: aliceblue; padding: 15px; border-radius: 20px"
+    >
+      <h3 class="text-center text-decoration-underline">Bill / @foodrestro</h3>
+      <hr />
+      <div class="row p-5">
+        <div class="col-md-6">
+          <h4>Name of Customer : <span>{{username}}</span></h4>
+          <h4>Bill amount : <span>{{totalprice}}</span></h4>
+        </div>
+        <div class="col-md-6">
+          <h4>Date : <span>{{date}}</span></h4>
+          <h4>Time : <span>{{time}}</span></h4>
+        </div>
+      </div>
+      <hr />
+      <br />
+
+      <br />
+
+      <a href="/" class="btn btn-dark d-block mx-auto w-25">Home</a>
+    </div>
+  </div>
+  {% else %}
+  <div
+    style="
+      border: 2px solid lightblue;
+      padding: 20px;
+      text-align: center;
+      background-color: rgb(228, 229, 229);
+    "
+  >
+    <p>
+      Apologies, the input provided appears to be incorrect. Please review and
+      try again. Thank you for your understanding
+    </p>
+    <a href="{% url 'online' %}" class="btn btn-dark d-block mx-auto w-25"
+      >Goback</a
+    >
+  </div>
+  {% endif %}
+
+  <!-- <a href="{% url 'online' %}" class="btn btn-primary d-block mx-autow-25">GoBack</a> -->
+</div>
+
+{% endblock content %}
